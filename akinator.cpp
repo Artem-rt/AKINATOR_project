@@ -23,7 +23,9 @@ int main ()
     if((re_akin_file = fopen (PREORDER_FILE, "w")) == NULL)
         assert (0 && "problem with preorder_file\n");
 
-    guessing_mode (akin_tree.root_node);
+    // guessing_mode (akin_tree.root_node);
+
+    choose_mode (&akin_tree);
 
     print_tree_preorder (akin_tree.root_node, re_akin_file);
 

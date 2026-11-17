@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <ctype.h>
+#include <stdlib.h>
 #include <sys/stat.h>
 #include "tree.h"
 
@@ -115,7 +116,7 @@ void dump_node (struct Tree_Node* node_dump, FILE* dump_file)
     assert (dump_file);
 
     if (node_dump -> parent_node == NULL)
-        fprintf (dump_file, "node%p [color = \"#480b41\", fillcolor = \"#ff00d953\", style = filled, label = \"{parent : %p|data : " SPECIF_TYPE "|{<left>left_child : %p|<right>right_child : %p}}\"];\n",
+        fprintf (dump_file, "node%p [color = \"#480b41\", fillcolor = \"#ff00d953\", style = filled, label = \"{parent : %p|data : " SPECIF_TYPE  "|{<left>left_child : %p|<right>right_child : %p}}\"];\n",
              node_dump, node_dump -> parent_node, node_dump -> data, node_dump -> left_child_node, node_dump -> right_child_node);
     else if (node_dump -> left_child_node == NULL && node_dump -> right_child_node == NULL)
         fprintf (dump_file, "node%p [color = \"#20480b\", fillcolor = \"#11712477\", style = filled, label = \"{parent : %p|data : " SPECIF_TYPE "|{<left>left_child : %p|<right>right_child : %p}}\"];\n",
